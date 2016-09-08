@@ -4,9 +4,10 @@ var express = require('express');
 // var webpackDevMiddleware = require('webpack-dev-middleware')
 // var webpackHotMiddleware = require('webpack-hot-middleware')
 // var config = require('./webpack.config')
-var app = new (require('express'))()
+var app = express();
+app.set('port', (process.env.PORT || 5000));
+
 app.use("/dist",express.static(__dirname + '/dist'));
-var port = 3000
 
 
 console.log(__dirname);
@@ -18,10 +19,6 @@ app.get("/", function(req, res) {
 // app.use(webpackDevMiddleware(compiler, { noInfo: true, publicPath: config.output.publicPath }))
 // app.use(webpackHotMiddleware(compiler))
 
-app.listen(port, function(error) {
-    if (error) {
-        console.error(error)
-    } else {
-        console.info("==> 🌎  Listening on port %s. Open up http://localhost:%s/ in your browser.", port, port)
-    }
-})
+app.listen(app.get('port'), function() {
+    console.log('Node app is running on port', app.get('port'));
+});
