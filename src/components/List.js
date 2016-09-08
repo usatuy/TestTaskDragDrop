@@ -26,7 +26,7 @@ export default class List extends Component {
             );
         });
         return (
-            <div className='col-md-4 list-item'>
+            <div className='col-md-3 list-item'>
                 <div className=' panel panel-default'>
                     <div className="panel-heading">
                         {status.title}
