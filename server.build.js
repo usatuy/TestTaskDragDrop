@@ -9,7 +9,7 @@ app.use("/dist",express.static(__dirname + '/dist'));
 var port = 3000
 
 
-console.log(__dirname);
+// console.log(__dirname);
 
 app.get("/", function(req, res) {
     res.sendFile(__dirname + '/index.html')

@@ -1,13 +1,11 @@
 var path = require('path')
 var webpack = require('webpack')
-var NpmInstallPlugin = require('npm-install-webpack-plugin');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 
 module.exports = {
     entry:{
         index:[
-            'webpack-hot-middleware/client',
             'babel-polyfill',
             './src/index',
             './src/index.css'
@@ -29,7 +27,6 @@ module.exports = {
             jQuery: "jquery"
         }),
         new webpack.optimize.OccurenceOrderPlugin(),
-        new webpack.HotModuleReplacementPlugin(),
         new webpack.DefinePlugin({
             // A common mistake is not stringifying the "production" string.
             'process.env.NODE_ENV': JSON.stringify('production')
@@ -40,7 +37,6 @@ module.exports = {
             }
         }),
         new ExtractTextPlugin("css/[name].css"),
-        new NpmInstallPlugin()
     ],
     module: {
         preLoaders: [
@@ -60,7 +56,7 @@ module.exports = {
             },
             { test: /\.(png|woff|woff2|eot|ttf|svg)$/, loader: 'url-loader?limit=100000' },
             {
-                loaders: ['react-hot','babel-loader'],
+                loaders: ['babel-loader'],
                 include: [
                     path.resolve(__dirname, "src")
                 ],
