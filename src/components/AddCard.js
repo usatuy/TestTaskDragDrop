@@ -24,7 +24,7 @@ export default class Card extends Component {
                            onChange={this.handleChange.bind(this)}
                     />
                 </div>
-                <button type="submit" className="btn btn-default pull-right">Add Card</button>
+                <button type="submit" className="btn btn-default">Add Card</button>
             </form>
         )
     }
