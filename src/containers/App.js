@@ -70,11 +70,19 @@ class App extends Component {
         });
 
         return (
-            <div className="container-lists">
-                <div className='row'>
-                    {Lists}
+            <div >
+                <div className="container-offset">
+                    <div className="container-lists">
+                        <div className='row col-md-offset-1'>
+                            {Lists}
+                        </div>
+                    </div>
                 </div>
-                <CreateListForm addList={this.AddList.bind(this)}></CreateListForm>
+                <div className="container-lists footer">
+                    <CreateListForm addList={this.AddList.bind(this)}></CreateListForm>
+
+                </div>
+
 
             </div>
         );

@@ -4,7 +4,8 @@
   "description": "Redux RU tutorial",
   "scripts": {
     "build": "webpack --config webpack.config.build.js -p",
-    "start": "node server.js"
+    "start": "node server.js",
+    "dev": "node server.build.js"
   },
   "author": "LAR",
   "license": "MIT",
