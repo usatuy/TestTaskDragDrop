@@ -23,8 +23,9 @@ class App extends Component {
     }
     AddList(data){
         const {addStatus} =  this.props.CardAction;
-        GetRequest('POST','lists',{list:{name:data.nameStatus}},function (data) {
-            addStatus(data.nameStatus, data.list.id);
+        GetRequest('POST','lists',{list:{name:data.nameStatus}},function (response) {
+            console.log('AddList',data);
+            addStatus(data.nameStatus, response.list.id);
         })
     }
     componentWillMount(){
